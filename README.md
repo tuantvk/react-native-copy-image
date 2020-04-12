@@ -6,12 +6,12 @@ Copy images for Android and iOS in React Native, use image from local project.
 ## Install
 
 
-### Create script folder
+- #### Create scripts folder
 
 Create folder __scripts/__ from root project.
 
 
-### Clone project
+- #### Clone project
 
 ```bash
 cd scripts
@@ -59,3 +59,8 @@ const Example = () => (
 
 export default Example;
 ```
+
+
+## LICENSE
+
+MIT
