@@ -28,11 +28,11 @@ Add script in __package.json__
 ```json
 "scripts": {
     ....
-    "copy-image": "bash scripts/react-native-copy-image/copy_image.sh",
+    "copy-image": "bash scripts/react-native-copy-image/copy_image.sh", // add here
 }
 ```
 
-From root project run:
+Finally, from root project run:
 
 ```bash
 yarn run copy-image
@@ -44,6 +44,8 @@ yarn run copy-image
 
 ### Example
 
+This is example for image name _apple.png_
+
 ```js
 import React from 'react';
 import { View, Image } from 'react-native';
@@ -52,7 +54,8 @@ import { View, Image } from 'react-native';
 const Example = () => (
     <View>
         <Image
-            source={{ uri: 'example.png '}}
+            source={{ uri: 'apple' }}
+            style={{ width: 50, height: 50 }}
         />
     </View>
 );
