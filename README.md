@@ -41,6 +41,10 @@ yarn run copy-image
 # npm run copy-image
 ```
 
+> Note:
+>
+> Rebuild app for update resource !
+
 
 ### Example
 
