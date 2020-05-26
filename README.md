@@ -28,7 +28,7 @@ Add script in __package.json__
 ```json
 "scripts": {
     ....
-    "copy-image": "bash scripts/react-native-copy-image/copy_image.sh", // add here
+    "copy-image": "bash scripts/react-native-copy-image/copy_image.sh" // add here
 }
 ```
 

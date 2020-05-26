@@ -3,9 +3,10 @@
 # get app name from app.json
 App=$( grep -o '"name": *"[^"]*"' app.json | grep -o '"[^"]*"$' | sed 's:^.\(.*\).$:\1:' )
 
+
 # create folder drawable for android
-rm -r  "android/app/src/main/res/drawable/"
-mkdir "android/app/src/main/res/drawable/"
+android_dir="android/app/src/main/res/drawable/"
+[ ! -d "$android_dir" ] && mkdir -p "$android_dir"
 
 
 # get images from assets images
@@ -16,16 +17,22 @@ do
     name="${file_name%.*}"
     imageset="$name.imageset"
 
-    # remove folder if file exits
-    rm -r "ios/$App/Images.xcassets/$imageset/"
+    # create folder imageset for ios
+    ios_dir="ios/$App/Images.xcassets/$imageset/"
+    [ ! -d "$ios_dir" ] && mkdir -p "$ios_dir"
 
-    # create new folder
-    mkdir "ios/$App/Images.xcassets/$imageset/"
     cp "$file" "ios/$App/Images.xcassets/$imageset/"
     cp scripts/react-native-copy-image/Contents.txt "ios/$App/Images.xcassets/$imageset/Contents.json"
-    sed -i '' -e "s/VALUE_FILENAME/$file_name/g" "ios/$App/Images.xcassets/$imageset/Contents.json"
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        sed -i '' -e "s/VALUE_FILENAME/$file_name/g" "ios/$App/Images.xcassets/$imageset/Contents.json"
+    else
+        sed -i -e "s/VALUE_FILENAME/$file_name/g" "ios/$App/Images.xcassets/$imageset/Contents.json"
+    fi
 
 
     # ==== android ====
     cp "$file" "android/app/src/main/res/drawable/"
+
+echo "Copy images success!"
 done
