@@ -22,7 +22,7 @@ do
     [ ! -d "$ios_dir" ] && mkdir -p "$ios_dir"
 
     cp "$file" "ios/$App/Images.xcassets/$imageset/"
-    cp scripts/react-native-copy-image/Contents.txt "ios/$App/Images.xcassets/$imageset/Contents.json"
+    cp scripts/react-native-copy-image/contents.txt "ios/$App/Images.xcassets/$imageset/Contents.json"
 
     if [[ "$OSTYPE" == "darwin"* ]]; then
         sed -i '' -e "s/VALUE_FILENAME/$file_name/g" "ios/$App/Images.xcassets/$imageset/Contents.json"

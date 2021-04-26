@@ -5,17 +5,15 @@ Copy images for Android and iOS in React Native, use image from local project.
 
 ## Install
 
+- Create folder __scripts/__ from root project.
+```bash
+mkdir scripts
+```
 
-- #### Create scripts folder
-
-Create folder __scripts/__ from root project.
-
-
-- #### Clone project
-
+- Clone project:
 ```bash
 cd scripts
-git clone https://github.com/tuantvk/react-native-copy-image.git
+git clone https://github.com/tuantvk/react-native-copy-image.git;cd react-native-copy-image;rm -rf .git;
 ```
 
 
@@ -46,7 +44,7 @@ yarn run copy-image
 > Rebuild app for update resource !
 
 
-### Example
+## Example
 
 This is example for image name _apple.png_
 
@@ -70,4 +68,4 @@ export default Example;
 
 ## LICENSE
 
-MIT
+[MIT](LICENSE)
