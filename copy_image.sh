@@ -9,6 +9,13 @@ android_dir="android/app/src/main/res/drawable/"
 [ ! -d "$android_dir" ] && mkdir -p "$android_dir"
 
 
+# rename filename to format snake_case
+for f in assets/images/*
+do 
+    lowercase=`echo $f | sed 's/./\L&/g;s/-/_/g;s/[ \t\n\r\v]/_/g'`
+    mv -vn "$f" "$lowercase"
+done
+
 # get images from assets images
 for file in assets/images/*
 do

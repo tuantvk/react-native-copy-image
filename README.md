@@ -13,7 +13,8 @@ mkdir scripts
 - Clone project:
 ```bash
 cd scripts
-git clone https://github.com/tuantvk/react-native-copy-image.git;cd react-native-copy-image;rm -rf .git;
+git clone https://github.com/tuantvk/react-native-copy-image.git;
+cd react-native-copy-image;rm -rf .git;
 ```
 
 
@@ -39,9 +40,22 @@ yarn run copy-image
 # npm run copy-image
 ```
 
+
+Check all images in path:
+- Android: __android/app/src/main/res/drawable/__
+- iOS: __ios/[AppName]/Images.xcassets__
+
+
 > Note:
 >
 > Rebuild app for update resource !
+
+
+> Warning
+>
+> Images has format to **snake_case**
+>
+> Ex: **Apple.png** -> **apple.png** | **Apple Computer.jpg** -> **apple_computer.jpg**
 
 
 ## Example
