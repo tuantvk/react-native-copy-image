@@ -12,7 +12,7 @@ android_dir="android/app/src/main/res/drawable/"
 # rename filename to format snake_case
 for f in assets/images/*
 do 
-    lowercase=`echo $f | sed 's/./\L&/g;s/-/_/g;s/[ \t\n\r\v]/_/g'`
+    lowercase=`echo $f | sed 's/\([a-z0-9]\)\([A-Z]\)/\1_\L\2/g'`
     mv -vn "$f" "$lowercase"
 done
 
